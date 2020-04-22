@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<h:outputStylesheet name="primeicons/primeicons.css"
+		library="primefaces" />
+</h:head>
+
+<h:body>
+	<h:form>
+
+		<p:panel header="Lista de Profissionais"
+			style="margin-bottom:10px; width: 80%">
+			<p:dataTable var="pessoa" value="#{CadastroBean.listaProfissional}">
+				<p:column headerText="Nome">
+					<h:outputText value="#{profissional.nome}" />
+				</p:column>
+				<p:column headerText="CPF" size="120">
+					<h:outputText value="#{profissional.cpf}" />
+				</p:column>
+				<p:column headerText="Remover" width="9%">
+					<p:commandButton icon="pi pi-times" updta="@form"
+						action="#{CadastroBean.remover}">
+						<f:setPropertyActionListener
+							target="#{CadastroBean.profissional.cpfSelecionado}"
+							value="#{profissional.cpf}" />
+					</p:commandButton>
+				</p:column>
+
+			</p:dataTable>
+		</p:panel>
+
+		<p:panelGrid id="gridCampos">
+
+			<p:row>
+				<p:column>
+					<p:commandButton value="Atualizar Lista" update="@form"
+					actionListener="#{CadastroBean.pesquisar}"	style="margin-right:20px;" />
+				</p:column>
+			</p:row>
+
+		</p:panelGrid>
+
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+
+	<title>TELA CADASTRO</title>
+
+</h:head>
+
+<h:body>
+
+	<h:form>
+
+		<div align="center">
+	
+			<p:messages>
+				<p:autoUpdate />
+			</p:messages>
+	
+			<p:panel header="Tela Cadastro" modal="true" style="width:270px; height:360px;">
+	
+				<p:graphicImage
+					url="https://img.myloview.com.br/fotomurais/utensilios-de-cozinha-desenho-de-esboco-para-o-seu-projeto-400-88775238.jpg"
+					width="150px" height="150px" />
+	
+				<br />
+				<br />
+				
+			<div align="left">
+				<h:panelGrid columns="3">
+					<h:outputLabel value="Nome: " />
+					<p:inputText id="keyword1" value="#{CadastroBean.profissional.nome}" label="Keyword1" style="font-size:15px;" />
+					<p:watermark for="keyword1" value="Nome Completo" id="watermark1" />
+	
+					<h:outputLabel value="CPF: " />
+					<p:inputText id="keyword2" value="#{CadastroBean.profissional.cpf}" label="keyword2" style="font-size:15px;" />
+					<p:watermark for="keyword2" value="000.000.000-00" id="watermark2" />
+					
+					<h:outputLabel value="Senha: " />
+					<p:password id="pwd1" value="#{CadastroBean.profissional.senha}" label="pwd1" style="font-size:15px;" />
+					<p:watermark for="pwd1" value="Senha cadastrada" id="watermark4" />
+				</h:panelGrid>				
+					
+					<p:commandButton value="Salvar"
+						actionListener="#{CadastroBean.salvar}" />						
+				</div>
+			
+	
+			</p:panel>
+		
+		</div>
+
+	</h:form>
+
+</h:body>
+
+</html>

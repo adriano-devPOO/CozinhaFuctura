@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+
+	<title>TELA LOGIN</title>
+
+</h:head>
+
+<h:body>
+
+	<h:form>
+
+		<div align="center">
+	
+			<p:messages>
+				<p:autoUpdate />
+			</p:messages>
+	
+			<p:panel header="Login" modal="true"
+				style="width:270px; height:380px;">
+	
+				<p:graphicImage
+					url="https://st4.depositphotos.com/1020324/19602/i/450/depositphotos_196029166-stock-photo-colorful-vintage-wooden-wall-decors.jpg"
+					width="240px" height="190px" />
+	
+				<br />
+				<br />
+	
+				<h:panelGrid columns="3">
+					<h:outputLabel value="CPF: " />
+					<p:inputText id="keyword1" value="#{LoginBean.login}"
+						label="Keyword1" style="font-size:15px;" />
+					<p:watermark for="keyword1" value="CPF cadastrado" id="watermark1" />
+	
+					<h:outputLabel value="Senha: " />
+					<p:password id="pwd1" value="#{LoginBean.senha}" label="pwd1"
+						style="font-size:15px;" />
+					<p:watermark for="pwd1" value="Senha cadastrada" id="watermark2" />
+				</h:panelGrid>
+	
+				<h:panelGrid columns="2">
+				
+					<p:commandButton value="Entrar"
+						actionListener="#{LoginBean.logarSistema}" />
+	
+					<p:commandButton value="Cadastro"
+						style="width:148px;" actionListener="#{LoginBean.novocadastro}" />
+						
+						
+				</h:panelGrid>
+	
+				<p:commandLink value="Limpar" action="#{LoginBean.limpar}"
+					update="@form" process="@this" style="font-size:15px; color:red" />
+	
+			</p:panel>
+		
+		</div>
+
+	</h:form>
+
+</h:body>
+
+</html>
